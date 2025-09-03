@@ -1,0 +1,1 @@
+sudo docker run --name openbullet2 --rm -p 8069:5000 -v ./app/UserData/:/app/UserData/ -it openbullet/openbullet2:latest

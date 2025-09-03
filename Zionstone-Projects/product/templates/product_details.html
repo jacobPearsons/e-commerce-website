@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products | Zionstone Electro Musical</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo-big.png" alt="logo" width="125px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </nav>
+            <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+            <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
+
+    <!-- Single Products -->
+    <div class="small-container single-product">
+        <div class="row">
+            <div class="col-2">
+                <img id="product-img" src="images/default-product.jpg" width="100%" alt="Product Image">
+            </div>
+            <div class="col-2">
+                <p>Home / <span id="product-category">Product Category</span></p>
+                <h1 id="product-name">Product Name</h1>
+                <h4 id="product-price">$0.00</h4>
+                <input type="number" value="1">
+                <a href="#" class="btn">Add to Cart</a>
+                <h3>Product Details <i class="fa fa-indent"></i></h3>
+                <br>
+                <p id="product-description"></p>
+            </div>
+        </div>
+    </div>
+    <!-- title -->
+    <div class="small-container">
+        <div class="row row-2">
+            <h2>Related Products</h2>
+            <p>View More</p>
+        </div>
+    </div>
+    <!-- Products -->
+    <div class="small-container">
+        <div class="row">
+            <div class="col-4">
+                <a href="product_details.html?product=alesis-samplepad-pro"><img src="images/product-9.jpg"></a>
+                <h4>Alesis Samplepad Pro</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$50.00</p>
+            </div>
+            <div class="col-4">
+                <img src="images/product-10.jpg">
+                <h4>Tama Superstar HyperDrive 6 - Piece Drum Set</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$50.00</p>
+            </div>
+            <div class="col-4">
+                <a href="product_details.html?product=boss-gt-1b"><img src="images/product-11.jpg"></a>
+                <h4>Boss GT-1B</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$50.00</p>
+            </div>
+            <div class="col-4">
+                <img src="images/product-12.jpg">
+                <h4> </h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$50.00</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">s
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and ios mobile phone.</p>
+                    <div class="app-logo">
+                        <img src="images/play-store.png">
+                        <img src="images/app-store.png">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="images/logo.png">
+                    <p>We Make You Instrumentally Sound.</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright &copy; 2024 Zionstone Electro Musical</p>
+        </div>
+    </div>
+
+    <!-- javascript -->
+
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px"
+            }
+            else {
+                MenuItems.style.maxHeight = "0px"
+            }
+        }
+    </script>
+
+    <!-- product gallery -->
+    <script>
+        var ProductImg = document.getElementById("ProductImg");
+        var SmallImg = document.getElementsByClassName("small-img");
+
+        SmallImg[0].onclick = function () {
+            ProductImg.src = SmallImg[0].src;
+        }
+        SmallImg[1].onclick = function () {
+            ProductImg.src = SmallImg[1].src;
+        }
+        SmallImg[2].onclick = function () {
+            ProductImg.src = SmallImg[2].src;
+        }
+        SmallImg[3].onclick = function () {
+            ProductImg.src = SmallImg[3].src;
+        }
+
+    </script>
+
+     <script>
+        // Define product data
+        const products = {
+            "evans-hydraulic-red-drum-heads": {
+                "name": "Evans Hydraulic Red Drum Heads",
+                "category": "Instruments",
+                "price": "$499.99",
+                "image": "images/product-42.jpg",
+                "description": "The Evans Hydraulic Red Drum Head, part of the renowned Evans Hydraulic series, features a thin layer of oil between its two plies to reduce overtones and enhance overall sound quality. This Hydraulic drum head delivers a rich, deep tone with a short sustain, making it well-suited for a variety of drumming styles and genres."
+            },
+            "presonus-dm7": {
+                "name": "Presonus DM-7",
+                "category": "Equipments",
+                "price": "$499.99",
+                "image": "images/product-45.jpg",
+                "description": "PreSonus’ budget-friendly DM-7 includes all the microphones required to capture a professional-quality drum kit sound. Delivered in a durable camera-style carry case with a custom-shaped insert, the PreSonus DM-7 drum mic set features seven microphones specifically chosen for drums, but they can also be used for other recording purposes."
+            },
+            "pioneer-dj-dm-40bt": {
+                "name": "Pioneer DJ’s DM-40BT",
+                "category": "Equipments",
+                "price": "$199",
+                "image": "images/product-46.jpg",
+                "description": "The DM-40BT active speakers offer a versatile home setup, delivering a rich, balanced sound perfect for production and DJing. Leveraging our professional speaker technology, these compact speakers come equipped with Bluetooth® wireless capability, support for the high-quality Qualcomm® aptX™ audio codec, and AAC compatibility."
+            },
+            "ibanez-sr304": {
+                "name": "Ibanez SR300E 4-String Electric Bass",
+                "category": "Instruments",
+                "price": "$499.99",
+                "image": "images/product-48.jpg",
+                "description": "This handsome bass features a nyatoh body and sturdy 5-piece maple and walnut SR4 neck that provide a lightweight feel and clear, punchy tone. The jatoba fretboard with medium frets allows for smooth playability across all 24 frets."
+            },
+            "presonus-audiobox-usb-96": {
+                "name": "Presonus AudioBox USB 96",
+                "category": "Equipments",
+                "price": "$499.99",
+                "image": "images/product-6.jpg",
+                "description": "This mobile audio interface embodies durability and performance. The AudioBox USB 96 features a robust steel chassis, built to withstand heavy use while remaining highly reliable. Its powerful headphone output delivers clear, loud sound, even in noisy environments. Powered via USB 2.0, it’s portable enough to use anywhere with a laptop—just toss it in your laptop bag or set it on a tabletop for recording on the go."
+            },
+            "sound-prince-full-range-speakers": {
+                "name": "Sound Prince Full Range Speakers",
+                "category": "Equipments",
+                "price": "$499.99",
+                "image": "images/product-21.jpg",
+                "description": "An electric guitar perfect for all music enthusiasts."
+            },
+            "guitar": {
+                "name": "Electric Guitar",
+                "category": "Instruments",
+                "price": "$499.99",
+                "image": "images/product-1.jpg",
+                "description": "An electric guitar perfect for all music enthusiasts."
+            },
+            "guitar": {
+                "name": "Electric Guitar",
+                "category": "Instruments",
+                "price": "$499.99",
+                "image": "images/product-1.jpg",
+                "description": "An electric guitar perfect for all music enthusiasts."
+            },
+            "guitar": {
+                "name": "Electric Guitar",
+                "category": "Instruments",
+                "price": "$499.99",
+                "image": "images/product-1.jpg",
+                "description": "An electric guitar perfect for all music enthusiasts."
+            },
+            "iloud-micro-monitor": {
+                "name": "iLoud Micro Monitor",
+                "category": "Instruments",
+                "price": "$499.99",
+                "image": "images/product-47.jpg",
+                "description": "As the smallest active studio reference monitoring system in the world, the iLoud Micro Monitor offers ultra-accurate, true linear frequency response without coloration. It delivers precise sound reproduction in any listening environment, making it especially suitable for home and project studios."
+            },
+            "hartke-vx410": {
+                "name": "Hartke VX410 Bass Cabinet",
+                "category": "Instruments",
+                "price": "$499.99",
+                "image": "images/product-1.jpg",
+                "description": "An electric guitar perfect for all music enthusiasts."
+            },
+            "shure-qlxd4": {
+                "name": "Shure QLXD4",
+                "category": "Equipments",
+                "price": "$499.99",
+                "image": "images/product-44.jpg",
+                "description": "The Shure QLXD4 is a digital half-rack wireless receiver tailored for professional audio applications. Compatible with the QLXD1 bodypack and QLXD2 handheld transmitters, it delivers dependable RF performance, secure AES 256-bit encryption, and high-quality audio suitable for instructors, presenters, and broadcasters. The receiver operates across both VHF and UHF frequency bands."
+            },
+            "yamaha-cl5": {
+                "name": "Yamaha CL5",
+                "category": "Equipment",
+                "price": "$499.99",
+                "image": "images/product-43.jpg",
+                "description": "The Yamaha CL5 is a digital mixing console engineered for live sound applications. It boasts a three-section fader layout with 72 mono and 8 stereo input channels. The console comes equipped with an onboard meter bridge and a stainless steel stand for iPad support. Ideal for large live sound systems, the CL5 delivers exceptional sound quality and comprehensive show control. Additional features include a touchscreen display, a built-in Dante interface, and multiple MY-card slots for digital expansion."
+            },
+            "laney-ah150-audiohub": {
+                "name": "Laney AH150 Audiohub",
+                "category": "Equipment",
+                "price": "$179.99",
+                "image": "images/gallery-1.jpg",
+                "description": "The Laney AH150 Audiohub is a 150 watt multi-instrument amp with 5 channels; a Master 5 Band graphic EQ and has a dual position kickback cabinet. Each channel has independent volume and EQ control and the 1st two channels are equipped with an XLR jack as well as the standard 1/4 inch jack. This allows amplification of many different instruments including Guitar/Bass/Keyboard or Microphone. The 5 band graphic EQ and the DSP digital delay with feedback; time and level controls allows more control over the tone of your instrument. The rear panel houses an insert mode FX loop and an extension speaker socket. Great for an intermediate wanting a multi purpose amp with some serious power backed up an array of features!"
+            },
+            "sire-marcus-miller-v3-5-string-bass": {
+                "name": "Sire Marcus Miller V3 5 String Bass, Olympic White",
+                "category": "Instruments",
+                "price": "$439.00",
+                "image": "images/product-14.jpg",
+                "description": "Crafted by the renowned bass player Marcus Miller, the V3 from the V Series features a mahogany body that produces a deep, resonant low end and a lively mid-range. Complemented by a rosewood fingerboard, this bass offers exceptional tonal depth. The V3 is also equipped with enhanced pickups, delivering significantly clearer sound quality compared to earlier models."
+            },
+            "ssl-2-usb-audio-interface": {
+                "name": "SSL 2+ USB Audio Interface",
+                "category": "Equipment",
+                "price": "$279",
+                "image": "images/product-17.jpg",
+                "description": "The Solid State Logic SSL 2+ is a desktop USB audio interface designed for engineers who want the legendary sound of SSL gear in a project-studio form factor. This interface captures audio at sample rates and resolutions of up to 192 kHz / 24-bit."
+            },
+            "volt-2": {
+                "name": "Volt 2 - Studio Pack",
+                "category": "Equipment",
+                "price": "$249.00",
+                "image": "images/product-16.jpg",
+                "description": "Volt 2 is the perfect USB audio interface for creative collaborators — from musicians and songwriters to livestreamers and podcasters — who want to easily record audio with legendary studio sound. Plug right into your Mac, PC, iPad, or iPhone and Volt just shows up, ready to capture your inspiration with professional sound, courtesy of Universal Audio."
+            },
+            "akg-wms40": {
+                "name": "AKG WMS40 Mini Dual Vocal Set",
+                "category": "Equipment",
+                "price": "$240.00",
+                "image": "images/product-22.jpg",
+                "description": "The WMS40 Mini wireless microphone system provides crystal clear sound and is a true plug n play solution. Up and running in a second, it is the optimum wireless solution for small stages, clubs, places of worship, hotels, and gyms. The system is available in different application optimized set packages, all of which includes a universal, switched mode power supply for worldwide operation."
+            },
+            "yamaha-rio-32240": {
+                "name": "Yamaha Rio 32240",
+                "category": "Equipment",
+                "price": "$10,527.29",
+                "image": "images/product-24.jpg",
+                "description": "The Rio3224-D is a Dante-compatible I/O rack designed to preserve natural, musical sound quality while enhancing the creative capabilities of mixing consoles. It offers flexible configuration options for mixing setups, allowing you to place installations and consoles according to the specific environment. Additionally, it supports the construction of stable, redundant systems to prevent unexpected issues."
+            },  
+            "arturia-minifuse-recording-pack": {
+                "name": "Arturia Minifuse Recording Pack",
+                "category": "Equipment",
+                "price": "$299",
+                "image": "images/product-7.jpg",
+                "description": "Capture, produce, and refine your sound with an all-inclusive package that meets all your creative needs. The MiniFuse Recording Pack pairs an advanced audio & MIDI interface with essential accessories and software to bring your music to life. Simply plug in, unleash your creativity, and experience the seamless music production workflow you've been dreaming of."
+            },  
+            "sennheiser-hd-200-pro": {
+                "name": "Sennheiser HD 200 Pro Professional Monitoring Headphones",
+                "category": "Equipment",
+                "price": "$79.95",
+                "image": "images/product-4.jpg",
+                "description": "The HD 200 PRO monitoring headphones provide powerful studio-quality sound wherever you go. Whether you're recording your own tracks, practicing quietly, or simply enjoying your favorite music at home, the HD 200 PRO is the perfect companion for all your monitoring needs. Its ambient noise attenuation allows you to stay focused on your work, while the soft ear pads ensure exceptional comfort during long creative sessions, whether you're using an electronic piano, laptop, or mixing console."
+            },  
+            "pearl-dmp905": {
+                "name": "Pearl DMP905/C262 - Decade Maple Satin Black Burst",
+                "category": "Instruments",
+                "price": "$199.99",
+                "image": "images/product-13.jpg",
+                "description": "The Decade Maple Series is perfect for advanced drummers looking to hone their skills or for seasoned professionals needing a reliable second set for smaller gigs or rehearsals. Featuring low-mass lugs for optimal performance, this drum shell set includes two tom holders with Opti-Loc mounting and sturdy feet on the floor tom for air suspension. The set is complete with a comprehensive hardware package, including a snare stand, hi-hat stand, two cymbal stands, and a bass drum pedal."
+            },   
+            "tama-ml42hlzbn-superstar-hyper‐drive-maple-classic": {
+                "name": "Tama Superstar Hyper Maple",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-10.jpg",
+                "description": "ibanezsr306eb."
+            },  
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },  
+            "alctron-t8700-ii-7-piece-drum-kit": {
+                "name": "Alctron T8700II Drum Microphone Set - 7-Piece",
+                "category": "Equipments",
+                "price": "$309.99",
+                "image": "images/product-41.jpg",
+                "description": "The T8700II is a comprehensive drum microphone set, designed to capture every detail of your drum and percussion performances. It includes a variety of microphones tailored to capture the full range of drum sounds. The set also comes with a case, clamps, and windshields for added convenience."
+            },  
+            "presonus-eris-sub-8-studio-subwoofer": {
+                "name": "Presonus Eris Sub 8 Studio Subwoofer",
+                "category": "Equipments",
+                "price": "$449.99",
+                "image": "images/product-5.jpg",
+                "description": "TThe Eris Sub8 features flexible connectivity options and onboard controls, allowing you to effortlessly set up a 2.1 monitoring system tailored to your space. You can adjust the input gain and even invert the polarity. With a high-pass filter and low-pass filter (crossover) control, the Sub8 operates precisely at the frequency where your main monitors stop, preventing the muddiness often associated with a lack of crossover. Plus, you’ll receive a comprehensive suite of music recording and production software. Incorporate the PreSonus Eris Sub8 subwoofer into your sound system and experience the deep, precise low-frequency sound you’ve been missing."
+            },
+            "arturia-microfreak-stellar-algorithm-synthesizer": {
+                "name": "Arturia Microfreak Stellar Algorithm Synthesizer",
+                "category": "Equipments",
+                "price": "$449.99",
+                "image": "images/product-7.jpg",
+                "description": "The MicroFreak Stellar is a limited edition of a celebrated experimental synthesizer that merges digital oscillators with an analog filter, offering limitless modulation and musical expression. Its sleek black design is adorned with whimsical space-age graphics, making it perfect for your intergalactic sonic journey."
+            },
+            "audio-technica-ath-m50x": {
+                "name": "Audio Technica ATH-M50x",
+                "category": "Equipments",
+                "price": "$449.99",
+                "image": "images/product-3.jpg",
+                "description": "Experience outstanding sonic performance and build quality in a limited-edition color scheme. A favorite among top audio engineers and professional reviewers, this model boasts a frequency response of 15 Hz to 28 kHz, featuring 45mm drivers equipped with rare-earth neodymium magnets and copper-clad aluminum wire voice coils."
+            },
+            "alesis-samplepad-pro": {
+                "name": "Alesis Samplepad Pro",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-9.jpg",
+                "description": "The SamplePad Pro is an all-in-one percussion instrument with limitless possibilities. It boasts 8 fully responsive, velocity-sensitive pads illuminated by blue LEDs. With hundreds of professionally recorded sounds included, it also has an SD card slot for loading and storing your own custom sounds."
+            },
+            "boss-gt-1b": {
+                "name": "BOSS GT 1B",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-11.jpg",
+                "description": "The GT-1B offers bass players an impressive array of professional tone-shaping capabilities in a compact and durable design. Powered by BOSS's premium sound engine, it provides access to a wide variety of bass-optimized amps and effects, perfect for both stage and studio use"
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "The lengthy and thorough testing and development phase has been successfully completed, and now Pearl is ready to showcase the results. With over 70 years of experience and award-winning craftsmanship in drum equipment, Pearl has raised the standard for the modern drummer with the new Decade Maple series—the first all-maple lacquered drum set. Decade sets a new benchmark for performance and value, featuring 830 series hardware, a P-930 pedal, and a snare drum. It’s an ideal choice as a primary kit for developing players or a reliable secondary set for seasoned professionals."
+            },
+            "sabian-cymbals": {
+                "name": "Sabian Cymbals",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-15.jpg",
+                "description": "Known for their durability and exceptional sound, Sabian cymbals cater to drummers of all levels. From beginner to professional, find the perfect crash, hi-hats, ride, china, and more to elevate your drumming."
+            },
+            "v7-dynamic-vocal-microphone": {
+                "name": "V7 Dynamic Vocal Microphone",
+                "category": "Equipments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "Introducing the V7 BLACK, a sleek all-black rendition of our popular V7 microphone. This dynamic vocal mic boasts a supercardioid polar pattern, ensuring exceptional clarity and rejection of background noise.Experience a crisp, open sound that beautifully captures the nuances of your voice and instruments, delivering a natural and immersive performance."
+            },
+            "sound-prince-full-range-speakers": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "behringer-ecm8000": {
+                "name": "Behringer ECM8000 Ultra-Linear Omni-Directional Measurement Condenser Microphone",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "The ECM8000 is a specialized condenser microphone designed for use with real-time analyzers, such as our ULTRACURVE DEQ2496, and provides an instantaneous acoustic picture of the room."
+            },
+            "alesis-strike-multipad": {
+                "name": "Alesis Strike MultiPad",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "This unit has nine velocity-sensitive pads that allow you to trigger internal and external sounds using the USB or MIDI ports. The Strike MultiPad lets you modify samples and create loops. It can also be used in real-time for live performances."
+            },
+            "pearl-roadstar-35000": {
+                "name": "Pearl Roadster D- 35000R",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "The Pearl Roadster Multi-Core Saddle Drum Throne is designed to deliver support and comfort to drummer where they need it. The Multi-Core throne top uses multiple layers of varied density foam that wrap around the surface of the cushion."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "The Roland SPD-SX is a versatile percussion sampling pad that offers powerful sample creation and playback features. It's ideal for drummers, percussionists, and electronic musicians who want to add depth and creativity to their performances. With its intuitive interface and expressive playability, the SPD-SX is a must-have tool for any musician looking to explore new sonic possibilities."
+            },
+            "cort-ge30b": {
+                "name": "Cort GE30B 5-Band EQ 30W Bass Amplifier",
+                "category": "Equipments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "The GE Series bass amplifiers pack power and punch in a small package. Whether you are practicing, jamming or performing at a small venue, the GE Series will deliver the bottom end with a built-in compressor, active/passive input option and metal grille."
+            },
+            "cort-b5-element-bass": {
+                "name": "Cort B5 Element ",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "Cort's Artisan B5 Element is a premium five-string bass that blends the best features of their popular Artisan B-series. It boasts a roasted maple fretboard on a panga-panga/walnut neck, Bartolini MK-1 pickups and preamp, and Hipshot Ultralite tuners. New additions include a high-mass MetalCraft M5 bridge for enhanced resonance and a comfortable mahogany body with a figured ash top in three color options. With its exceptional craftsmanship and top-tier components, the Artisan B5 Element is an ideal choice for professional musicians and bass enthusiasts seeking a high-performance instrument."
+            },
+            "scarlett-18i20": {
+                "name": "Scarlett 18i20 3rd Generation",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "Scarlett 18i20 is the ultimate studio hub for demanding project studios. Fully equipped with 18 inputs and 20 outputs, including eight of our most detailed ultra-low-noise mic preamps, line, Hi-Z, and MIDI connections for your drums, vocals, guitars, keys, and synths."
+            },
+            "uber-mic": {
+                "name": "M-Audio's Uber Mic",
+                "category": "Equipments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "M-Audio's Uber Mic features a large-diaphragm 3-capsule condenser microphone, perfect for podcasting applications or capturing high-quality audio from vocalists, instruments, percussion and more."
+            },
+            "wharfedale-microphone-dm-57": {
+                "name": "Wharfedale Microphone DM-57",
+                "category": "Equipments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "Wharfedale wired microphone DM-57 is a dynamic moving coil microphone designed to handle a wide variety of vocal and instrumental applications for both live sound and recording. It has a super-cardioid pickup pattern with a frequency response of 50Hz to 12kHz."
+            },
+            "gx4816": {
+                "name": "GX4816 48 in / 16out 96kHz Expander",
+                "category": "Equipments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "GX4816 is a 96kHz audio expander that provides high-input-count remote expansion for SQ, Avantis and dLive mixing systems, and for AHM audio matrix processors."
+            },
+            "alesis-asp-2 ": {
+                "name": "Alesis ASP-2",
+                "category": "Equipments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "The Alesis ASP-2 is a universal piano-style sustain pedal designed to provide foot-operated sustain for pianists and keyboard players on the stage, in the studio, or at home."
+            },
+            "shure-se215": {
+                "name": "Shure SE215",
+                "category": "Equipments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "SE215 Sound Isolating™ Earphones provide clear sound and deep bass with a detachable cable enabling the option to go wireless. Sound Isolating design keeps earphones in and noise out, providing incredibly immersive audio no matter where you are."
+            },
+            "yamaha-genos": {
+                "name": "Yamaha GENOS 76-key Flagship Arranger Workstation",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "Genos features a diverse range of content, including 1,710 instrument Voices, 550 accompaniment Styles, 216 arpeggios and more. Featured Voices: 10 Revo! Drums/SFX, 76 Ensemble, 390 Super Articulation!, 75 Super Articulation2!, 82 MegaVoice, 40 Sweet!, 81 Cool!, 160 Live!, 24 Organ Flutes!."
+            },
+            "alesis-v49": {
+                "name": "Alesis V49",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "The Alesis V49 is a powerful, intuitive MIDI controller that lets you take command of your music software with a series of pads, knobs, and buttons. With 49 full-size velocity-sensitive keys and Octave Up/Down buttons, you can expand the keyboard to the full melodic range and play bass lines, chords, and melodies.."
+            },
+            "presonus-studio-live": {
+                "name": "Presonus Studio live 32xs live Digital Mixing Console",
+                "category": "Equipments",
+                "price": "$449.99",
+                "image": "images/product-a2.jpg",
+                "description": "Powered by the dual-core PreSonus® FLEX DSP Engine, the StudioLive 32SX digital mixer is equipped with 40 mixing channels, 26 mix buses, and 286 simultaneous processors, including 4 stereo reverberation systems, and Fat Channel plug-in models on every input and mix.."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+            "ibanezsr306eb": {
+                "name": "II",
+                "category": "Instruments",
+                "price": "$449.99",
+                "image": "images/product-img.jpg",
+                "description": "ibanezsr306eb."
+            },
+              
+        }
+        
+
+        // Function to load the product details based on URL parameter
+        function loadProductDetails() {
+            // Get the query string from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('product');
+            
+            // Get the product details from the products object
+            const product = products[productId];
+            
+            if (product) {
+                // Update the product details on the page
+                document.getElementById('product-name').textContent = product.name;
+                document.getElementById('product-category').textContent = product.category;
+                document.getElementById('product-price').textContent = product.price;
+                document.getElementById('product-img').src = product.image;
+                document.getElementById('product-description').textContent = product.description;
+            } else {
+                // If the product is not found, show a default message
+                document.getElementById('product-name').textContent = "Product Not Found";
+                document.getElementById('product-description').textContent = "The product you are looking for does not exist.";
+            }
+        }
+
+        // Load product details on page load
+        window.onload = loadProductDetails;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,219 @@
+Basic Setup & Configuration
+bash
+
+# Set your username (global)
+git config --global user.name "Your Name"
+
+# Set your email (global)
+git config --global user.email "your.email@example.com"
+
+# Check your configuration
+git config --list
+
+Repository Initialization
+bash
+
+# Initialize a new Git repository
+git init
+
+# Clone an existing repository
+git clone <repository-url>
+
+Staging Changes
+bash
+
+# Stage all changes
+git add .
+
+# Stage specific file
+git add filename.txt
+
+# Stage all modified and deleted files (not new files)
+git add -u
+
+# Stage interactively (choose which changes to add)
+git add -p
+
+Committing Changes
+bash
+
+# Commit staged changes with message
+git commit -m "Your commit message"
+
+# Commit all modified/deleted files (skip git add)
+git commit -a -m "Your commit message"
+
+# Amend the previous commit (change message or add files)
+git commit --amend
+
+Branch Operations
+bash
+
+# Create a new branch
+git branch branch-name
+
+# Switch to a branch
+git checkout branch-name
+
+# Create and switch to new branch
+git checkout -b new-branch
+
+# List all branches
+git branch
+
+# List all branches (including remote)
+git branch -a
+
+# Delete a branch
+git branch -d branch-name
+
+# Force delete a branch
+git branch -D branch-name
+
+Remote Repository Operations
+bash
+
+# Add a remote repository
+git remote add origin <repository-url>
+
+# View remote repositories
+git remote -v
+
+# Change remote URL
+git remote set-url origin <new-url>
+
+# Remove remote
+git remote remove origin
+
+Pushing to Remote
+bash
+
+# Push to remote (first time, set upstream)
+git push -u origin main
+
+# Push to specific branch
+git push origin branch-name
+
+# Push all branches
+git push --all origin
+
+# Force push (use with caution!)
+git push -f origin main
+
+# Push tags
+git push --tags
+
+Pulling & Fetching Updates
+bash
+
+# Fetch updates from remote (doesn't merge)
+git fetch origin
+
+# Pull updates (fetch + merge)
+git pull origin main
+
+# Pull with rebase instead of merge
+git pull --rebase origin main
+
+Status & Logs
+bash
+
+# Check status of working directory
+git status
+
+# View commit history
+git log
+
+# View compact commit history
+git log --oneline
+
+# View changes in working directory
+git diff
+
+# View staged changes
+git diff --staged
+
+Stashing
+bash
+
+# Stash changes temporarily
+git stash
+
+# Stash with message
+git stash save "message"
+
+# List stashes
+git stash list
+
+# Apply latest stash
+git stash apply
+
+# Apply specific stash
+git stash apply stash@{n}
+
+# Pop latest stash (apply and remove)
+git stash pop
+
+# Clear all stashes
+git stash clear
+
+Tagging
+bash
+
+# Create lightweight tag
+git tag v1.0
+
+# Create annotated tag
+git tag -a v1.0 -m "Version 1.0"
+
+# List tags
+git tag
+
+# Push specific tag
+git push origin v1.0
+
+# Push all tags
+git push --tags
+
+Advanced Operations
+bash
+
+# Reset to previous commit (soft - keep changes staged)
+git reset --soft HEAD~1
+
+# Reset to previous commit (hard - discard changes)
+git reset --hard HEAD~1
+
+# Rebase interactively
+git rebase -i HEAD~3
+
+# Cherry-pick a specific commit
+git cherry-pick <commit-hash>
+
+# View remote branches
+git branch -r
+
+# Track remote branch
+git checkout --track origin/branch-name
+
+Common Workflow Example
+bash
+
+# Typical workflow for pushing changes:
+git status                 # Check what's changed
+git add .                 # Stage all changes
+git commit -m "Message"   # Commit changes
+git pull origin main      # Pull latest changes
+git push origin main      # Push to remote
+
+Useful Aliases (add to ~/.gitconfig)
+bash
+
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p

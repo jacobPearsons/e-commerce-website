@@ -1,0 +1,19 @@
+gobuster dir
+gobuster vhost
+ffuf -request
+python3
+docker compose
+--- Find hidden directories by fuzzing them ---
+
+for hosts - use host then edit your hosts file
+
+curl <ip address> -H 'Host: header'Cookie: XSRF-TOKEN=eyJpdiI6IlhhclpQREw2OTFUQ3lNK0VuWDYrbVE9PSIsInZhbHVlIjoic2pZNDlYcytaS1ppZW40RHIwSi8xNk5Pc2p2Q1llSndDT2lPM1AxYzVlNFZEbC9YTEtNU3NmK2s4aVNtU1VIcmtKc05lbytDN0ZKQjFJRStXYk83Q2RSOS9DbnRwaVgyVlJHdExZZVNlQzBraXhJQ2dPYkZ3L1NEeTFWUC85UUIiLCJtYWMiOiJiMTZlMWIxOTM0MDc4NjRlODc4NmQ0ZDllYWIxMTNlNTQwYmQxZGIxMDFhNDE3MTc3YTI0ODk2MGE1Njg4NTkwIiwidGFnIjoiIn0%3D
+
+----------------------------------------------------
+
+back is their api server...
+
+i need to fuzz the api to create a user then escalate priviledge
+
+i got a token and session id while going directly to the back.zenithstake.com
+
