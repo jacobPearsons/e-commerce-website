@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { Zap, Shield, Truck, Headphones, Guitar, Music, Mic2, Drum } from "lucide-react";
 import { ShippingBadge } from "@/components/shipping";
-import { AddToCartButton } from "@/components/product/AddToCartButton";
+import { AddToCartButton } from "@/components/product";
+import { products } from "@/data/products";
 
 const categories = [
   { name: "Guitars & Basses", slug: "guitars-basses", icon: Guitar, desc: "Electric, acoustic, and bass guitars" },
@@ -10,18 +11,9 @@ const categories = [
   { name: "Drums & Percussion", slug: "drums-percussion", icon: Drum, desc: "Electronic drums, cymbals, and accessories" },
 ];
 
-const featuredProducts = [
-  { name: "Fender Stratocaster Player", brand: "Fender", price: 849, originalPrice: 999, slug: "fender-stratocaster-player", emoji: "🎸", shipsInDays: 2, twoDayEligible: true },
-  { name: "Korg Minilogue XD", brand: "Korg", price: 599, slug: "korg-minilogue-xd", emoji: "🎹", shipsInDays: 2, twoDayEligible: true },
-  { name: "Focusrite Scarlett 2i2", brand: "Focusrite", price: 169, originalPrice: 199, slug: "focusrite-scarlett-2i2", emoji: "🎤", shipsInDays: 2, twoDayEligible: true },
-  { name: "Shure SM7B Microphone", brand: "Shure", price: 399, slug: "shure-sm7b", emoji: "🎙️", shipsInDays: 2, twoDayEligible: true },
-];
+const featuredProducts = products.slice(0, 4);
 
-const deals = [
-  { name: "Behringer Neutron Synth", price: 299, was: 449, discount: "33% OFF", emoji: "🎛️" },
-  { name: "Audio-Technica ATH-M50x", price: 99, was: 149, discount: "34% OFF", emoji: "🎧" },
-  { name: "Akai MPC One", price: 699, was: 899, discount: "22% OFF", emoji: "🎹" },
-];
+const deals = products.filter(p => p.originalPrice).slice(0, 3);
 
 export default function HomePage() {
   return (
@@ -221,9 +213,9 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {deals.map((deal, i) => (
+            {deals.map((deal) => (
               <div
-                key={i}
+                key={deal.id}
                 className="group bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all"
               >
                 <div className="flex items-start gap-4">
@@ -232,12 +224,14 @@ export default function HomePage() {
                   </div>
                   <div className="flex-1">
                     <div className="inline-block bg-red-500 text-white text-xs font-bold px-2 py-1 rounded mb-2">
-                      {deal.discount}
+                      {deal.originalPrice && `${Math.round((1 - deal.price / deal.originalPrice) * 100)}% OFF`}
                     </div>
                     <h3 className="font-semibold group-hover:text-purple-600 transition-colors">{deal.name}</h3>
                     <div className="flex items-baseline gap-2 mt-1">
                       <span className="text-xl font-bold">${deal.price}</span>
-                      <span className="text-sm text-muted-foreground line-through">${deal.was}</span>
+                      {deal.originalPrice && deal.originalPrice > deal.price && (
+                        <span className="text-sm text-muted-foreground line-through">${deal.originalPrice}</span>
+                      )}
                     </div>
                   </div>
                 </div>

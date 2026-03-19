@@ -7,21 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ShippingBadge } from '@/components/shipping';
 import { AddToCartButton } from '@/components/product';
-
-const products = [
-  { id: "1", name: "Fender Stratocaster Player", brand: "Fender", price: 849, originalPrice: 999, category: "guitars-basses", slug: "fender-stratocaster-player", emoji: "🎸", shipsInDays: 2, twoDayEligible: true, rating: 4.8, reviews: 1247 },
-  { id: "2", name: "Gibson Les Paul Standard", brand: "Gibson", price: 2499, category: "guitars-basses", slug: "gibson-les-paul", emoji: "🎸", shipsInDays: 2, twoDayEligible: true, rating: 4.9, reviews: 892 },
-  { id: "3", name: "Korg Minilogue XD", brand: "Korg", price: 599, category: "keyboards-synths", slug: "korg-minilogue-xd", emoji: "🎹", shipsInDays: 2, twoDayEligible: true, rating: 4.7, reviews: 2341 },
-  { id: "4", name: "Moog Subsequent 37", brand: "Moog", price: 1599, category: "keyboards-synths", slug: "moog-subsequent-37", emoji: "🎹", shipsInDays: 2, twoDayEligible: true, rating: 4.8, reviews: 456 },
-  { id: "5", name: "Focusrite Scarlett 2i2", brand: "Focusrite", price: 169, originalPrice: 199, category: "recording-gear", slug: "focusrite-scarlett-2i2", emoji: "🎤", shipsInDays: 2, twoDayEligible: true, rating: 4.8, reviews: 3421 },
-  { id: "6", name: "Universal Audio Apollo Twin X", brand: "Universal Audio", price: 1299, category: "recording-gear", slug: "ua-apollo-twin", emoji: "🎤", shipsInDays: 2, twoDayEligible: true, rating: 4.9, reviews: 2134 },
-  { id: "7", name: "Shure SM7B", brand: "Shure", price: 399, category: "recording-gear", slug: "shure-sm7b", emoji: "🎙️", shipsInDays: 2, twoDayEligible: true, rating: 4.9, reviews: 5678 },
-  { id: "8", name: "Audio-Technica ATH-M50x", brand: "Audio-Technica", price: 149, originalPrice: 189, category: "audio-equipment", slug: "ath-m50x", emoji: "🎧", shipsInDays: 2, twoDayEligible: true, rating: 4.8, reviews: 8765 },
-  { id: "9", name: "Yamaha HS8 Studio Monitors", brand: "Yamaha", price: 499, category: "audio-equipment", slug: "yamaha-hs8", emoji: "🔊", shipsInDays: 2, twoDayEligible: true, rating: 4.7, reviews: 2341 },
-  { id: "10", name: "Roland TD-17KVX E-Drum Kit", brand: "Roland", price: 1599, category: "drums-percussion", slug: "roland-td-17kvx", emoji: "🥁", shipsInDays: 3, twoDayEligible: false, rating: 4.6, reviews: 567 },
-  { id: "11", name: "Nord Stage 3 88", brand: "Nord", price: 3799, category: "keyboards-synths", slug: "nord-stage-3", emoji: "🎹", shipsInDays: 2, twoDayEligible: true, rating: 4.9, reviews: 452 },
-  { id: "12", name: "Fender Jazz Bass", brand: "Fender", price: 899, category: "guitars-basses", slug: "fender-jazz-bass", emoji: "🎸", shipsInDays: 2, twoDayEligible: true, rating: 4.8, reviews: 1234 },
-];
+import { products } from '@/data/products';
 
 const categories = [
   { slug: "guitars-basses", name: "Guitars & Basses", count: 45 },

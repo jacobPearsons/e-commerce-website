@@ -7,7 +7,7 @@ import { useWishlist, type WishlistItem } from '@/lib/wishlist-context';
 interface WishlistButtonProps {
   product: Omit<WishlistItem, 'id'>;
   className?: string;
-  variant?: 'default' | 'ghost';
+  variant?: 'default' | 'ghost' | 'outline';
 }
 
 export function WishlistButton({ product, className = '', variant = 'ghost' }: WishlistButtonProps) {
