@@ -2,13 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import Link from "next/link";
-import { ArrowLeft, Heart, Share2, Truck, Shield, RotateCcw } from "lucide-react";
+import { ArrowLeft, Heart, Share2, Truck, Shield, RotateCcw, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ShippingBadge, DeliveryEstimate, ShippingSelector } from '@/components/shipping';
-import { AddToCartButton } from '@/components/product';
-import { WishlistButton } from '@/components/product';
+import { AddToCartButton, WishlistButton } from '@/components/product';
 import { products, getProductBySlug, getRelatedProducts } from '@/data/products';
 import { calculateShipping } from '@/lib/shipping';
+import { useRecentlyViewed } from '@/lib/recently-viewed-context';
 import type { ShippingMethod } from '@/types/shipping';
 
 export default function ProductDetailPage({ params }: { params: { slug: string } }) {
@@ -17,6 +17,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
   const [shippingCalculation, setShippingCalculation] = useState(() => calculateShipping('90210'));
   const [selectedImage, setSelectedImage] = useState(0);
   const [product, setProduct] = useState(getProductBySlug(params.slug));
+  const { items: recentlyViewed, addItem } = useRecentlyViewed();
 
   useEffect(() => {
     const found = getProductBySlug(params.slug);
@@ -24,6 +25,12 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
     setQuantity(1);
     setSelectedImage(0);
   }, [params.slug]);
+
+  useEffect(() => {
+    if (product) {
+      addItem(product);
+    }
+  }, [product, addItem]);
 
   const handleShippingChange = (method: ShippingMethod) => {
     setSelectedShipping(method);
@@ -295,6 +302,37 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
                 </div>
               </Link>
             ))}
+          </div>
+        </div>
+      )}
+
+      {/* Recently Viewed Products */}
+      {recentlyViewed.length > 1 && (
+        <div className="mt-12">
+          <div className="flex items-center gap-2 mb-6">
+            <Clock className="w-5 h-5 text-purple-600" />
+            <h2 className="text-xl font-bold">Recently Viewed</h2>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4">
+            {recentlyViewed
+              .filter(p => p.id !== product.id)
+              .slice(0, 6)
+              .map((viewedProduct) => (
+                <Link
+                  key={viewedProduct.id}
+                  href={`/products/${viewedProduct.slug}`}
+                  className="group bg-white rounded-lg border p-3 hover:shadow-md transition-all"
+                >
+                  <div className="aspect-square bg-gray-50 rounded-lg flex items-center justify-center mb-2">
+                    <span className="text-3xl">{viewedProduct.emoji}</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground truncate">{viewedProduct.brand}</p>
+                  <h3 className="text-sm font-medium line-clamp-2 group-hover:text-purple-600 transition-colors">
+                    {viewedProduct.name}
+                  </h3>
+                  <p className="text-sm font-bold mt-1">${viewedProduct.price}</p>
+                </Link>
+              ))}
           </div>
         </div>
       )}
