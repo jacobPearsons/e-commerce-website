@@ -167,7 +167,7 @@ export default function HomePage() {
                     </div>
                     {(product.originalPrice ?? 0) > product.price && (
                       <div className="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
-                        {Math.round((1 - product.price / product.originalPrice) * 100)}% OFF
+                        {Math.round((1 - product.price / (product.originalPrice ?? product.price)) * 100)}% OFF
                       </div>
                     )}
                   </div>
