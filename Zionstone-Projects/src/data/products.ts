@@ -14,6 +14,7 @@ export interface Product {
   description?: string;
   features?: string[];
   inventory?: number;
+  images?: string[];
 }
 
 export const products: Product[] = [
@@ -39,7 +40,14 @@ export const products: Product[] = [
       "2-point synchronized tremolo",
       "Chrome hardware"
     ],
-    inventory: 15
+    inventory: 15,
+    images: [
+      "/images/1.jpg",
+      "/images/2.jpg",
+      "/images/3.jpg",
+      "/images/4.jpg",
+      "/images/5.jpg"
+    ]
   },
   {
     id: "2",

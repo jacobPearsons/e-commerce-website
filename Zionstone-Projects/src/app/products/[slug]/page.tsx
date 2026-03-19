@@ -1,12 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Heart, Share2, Truck, Shield, RotateCcw, Clock } from "lucide-react";
+import { ArrowLeft, Share2, Truck, Shield, RotateCcw, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ShippingBadge, DeliveryEstimate, ShippingSelector } from '@/components/shipping';
 import { AddToCartButton, WishlistButton } from '@/components/product';
-import { products, getProductBySlug, getRelatedProducts } from '@/data/products';
+import { getProductBySlug, getRelatedProducts } from '@/data/products';
 import { calculateShipping } from '@/lib/shipping';
 import { useRecentlyViewed } from '@/lib/recently-viewed-context';
 import type { ShippingMethod } from '@/types/shipping';
@@ -49,7 +50,9 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
   }
 
   const relatedProducts = getRelatedProducts(product);
-  const images = [product.emoji, product.emoji, product.emoji, product.emoji]; // Placeholder for multiple images
+  const productImages = product.images && product.images.length > 0 
+    ? product.images 
+    : [product.emoji];
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -63,15 +66,25 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
         {/* Product Images */}
         <div>
           <div className="aspect-square bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl flex items-center justify-center mb-4 relative overflow-hidden">
-            <span className="text-[180px]">{images[selectedImage]}</span>
-            <div className="absolute top-4 left-4">
+            {productImages[selectedImage]?.startsWith('/') ? (
+              <Image
+                src={productImages[selectedImage]}
+                alt={product.name}
+                fill
+                className="object-contain p-4"
+                priority
+              />
+            ) : (
+              <span className="text-[180px]">{productImages[selectedImage]}</span>
+            )}
+            <div className="absolute top-4 left-4 z-10">
               <ShippingBadge
                 shipsInDays={product.shipsInDays}
                 twoDayEligible={product.twoDayEligible}
               />
             </div>
             {(product.originalPrice ?? 0) > product.price && (
-              <div className="absolute top-4 right-4 bg-red-500 text-white text-sm font-bold px-3 py-1 rounded-lg">
+              <div className="absolute top-4 right-4 bg-red-500 text-white text-sm font-bold px-3 py-1 rounded-lg z-10">
                 {Math.round((1 - product.price / (product.originalPrice ?? product.price)) * 100)}% OFF
               </div>
             )}
@@ -79,15 +92,24 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
           
           {/* Thumbnail gallery */}
           <div className="grid grid-cols-4 gap-3">
-            {images.map((img, i) => (
+            {productImages.map((img, i) => (
               <button
                 key={i}
                 onClick={() => setSelectedImage(i)}
-                className={`aspect-square bg-gray-100 rounded-lg flex items-center justify-center text-3xl hover:ring-2 hover:ring-purple-500 transition-all ${
+                className={`aspect-square bg-gray-100 rounded-lg flex items-center justify-center overflow-hidden hover:ring-2 hover:ring-purple-500 transition-all ${
                   selectedImage === i ? 'ring-2 ring-purple-500' : ''
                 }`}
               >
-                {img}
+                {img?.startsWith('/') ? (
+                  <Image
+                    src={img}
+                    alt={`${product.name} ${i + 1}`}
+                    fill
+                    className="object-contain p-2"
+                  />
+                ) : (
+                  <span className="text-3xl">{img}</span>
+                )}
               </button>
             ))}
           </div>
