@@ -17,8 +17,8 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-8">
             <Link href="/" className="flex items-center gap-2">
-              <span className="text-2xl font-bold">⚡</span>
-              <span className="hidden sm:inline-block font-bold text-lg text-blue-600">CircuitCart</span>
+              <span className="text-2xl font-bold">🎸</span>
+              <span className="hidden sm:inline-block font-bold text-lg text-purple-600">SoundCart</span>
             </Link>
             <nav className="hidden md:flex items-center gap-6">
               <Link href="/products" className="text-sm font-medium hover:text-primary">

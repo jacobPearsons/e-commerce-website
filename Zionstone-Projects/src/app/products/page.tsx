@@ -2,42 +2,42 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { Search, SlidersHorizontal, Grid3X3, LayoutList, X, ChevronDown } from 'lucide-react';
+import { Search, SlidersHorizontal, Grid3X3, LayoutList, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ShippingBadge } from '@/components/shipping';
+import { AddToCartButton } from '@/components/product';
 
 const products = [
-  { id: "1", name: "MacBook Pro 14\" M3", brand: "Apple", price: 1999, originalPrice: 2199, category: "computers-laptops", slug: "macbook-pro-14", emoji: "💻", shipsInDays: 2, twoDayEligible: true, rating: 4.8, reviews: 1247 },
-  { id: "2", name: "NVIDIA RTX 4080 Super", brand: "NVIDIA", price: 999, category: "components", slug: "nvidia-rtx-4080", emoji: "🎮", shipsInDays: 2, twoDayEligible: true, rating: 4.9, reviews: 892 },
-  { id: "3", name: "iPhone 15 Pro Max", brand: "Apple", price: 1199, originalPrice: 1299, category: "smartphones", slug: "iphone-15-pro", emoji: "📱", shipsInDays: 2, twoDayEligible: true, rating: 4.7, reviews: 2341 },
-  { id: "4", name: "Sony WH-1000XM5", brand: "Sony", price: 349, category: "audio-gaming", slug: "sony-wh1000xm5", emoji: "🎧", shipsInDays: 2, twoDayEligible: true, rating: 4.8, reviews: 1567 },
-  { id: "5", name: "Samsung 55\" OLED 4K", brand: "Samsung", price: 1299, category: "tvs-displays", slug: "samsung-oled-55", emoji: "📺", shipsInDays: 3, twoDayEligible: false, rating: 4.6, reviews: 456 },
-  { id: "6", name: "AMD Ryzen 9 7950X", brand: "AMD", price: 549, category: "components", slug: "amd-ryzen-9", emoji: "⚡", shipsInDays: 2, twoDayEligible: true, rating: 4.9, reviews: 2134 },
-  { id: "7", name: "PlayStation 5", brand: "Sony", price: 499, category: "gaming", slug: "ps5", emoji: "🎮", shipsInDays: 2, twoDayEligible: true, rating: 4.8, reviews: 3421 },
-  { id: "8", name: "Mechanical Keyboard RGB", brand: "Corsair", price: 149, originalPrice: 189, category: "accessories", slug: "corsair-k70", emoji: "⌨️", shipsInDays: 2, twoDayEligible: true, rating: 4.5, reviews: 876 },
-  { id: "9", name: "Logitech MX Master 3S", brand: "Logitech", price: 99, category: "accessories", slug: "logitech-mx-master", emoji: "🖱️", shipsInDays: 2, twoDayEligible: true, rating: 4.7, reviews: 2341 },
-  { id: "10", name: "32GB DDR5 RAM Kit", brand: "G.Skill", price: 129, category: "components", slug: "gskill-ddr5-32gb", emoji: "💾", shipsInDays: 2, twoDayEligible: true, rating: 4.6, reviews: 567 },
-  { id: "11", name: "AirPods Pro 2", brand: "Apple", price: 249, category: "audio-gaming", slug: "airpods-pro-2", emoji: "🎧", shipsInDays: 2, twoDayEligible: true, rating: 4.8, reviews: 4521 },
-  { id: "12", name: "Samsung 2TB NVMe SSD", brand: "Samsung", price: 179, originalPrice: 199, category: "components", slug: "samsung-980-pro", emoji: "💿", shipsInDays: 2, twoDayEligible: true, rating: 4.9, reviews: 1823 },
+  { id: "1", name: "Fender Stratocaster Player", brand: "Fender", price: 849, originalPrice: 999, category: "guitars-basses", slug: "fender-stratocaster-player", emoji: "🎸", shipsInDays: 2, twoDayEligible: true, rating: 4.8, reviews: 1247 },
+  { id: "2", name: "Gibson Les Paul Standard", brand: "Gibson", price: 2499, category: "guitars-basses", slug: "gibson-les-paul", emoji: "🎸", shipsInDays: 2, twoDayEligible: true, rating: 4.9, reviews: 892 },
+  { id: "3", name: "Korg Minilogue XD", brand: "Korg", price: 599, category: "keyboards-synths", slug: "korg-minilogue-xd", emoji: "🎹", shipsInDays: 2, twoDayEligible: true, rating: 4.7, reviews: 2341 },
+  { id: "4", name: "Moog Subsequent 37", brand: "Moog", price: 1599, category: "keyboards-synths", slug: "moog-subsequent-37", emoji: "🎹", shipsInDays: 2, twoDayEligible: true, rating: 4.8, reviews: 456 },
+  { id: "5", name: "Focusrite Scarlett 2i2", brand: "Focusrite", price: 169, originalPrice: 199, category: "recording-gear", slug: "focusrite-scarlett-2i2", emoji: "🎤", shipsInDays: 2, twoDayEligible: true, rating: 4.8, reviews: 3421 },
+  { id: "6", name: "Universal Audio Apollo Twin X", brand: "Universal Audio", price: 1299, category: "recording-gear", slug: "ua-apollo-twin", emoji: "🎤", shipsInDays: 2, twoDayEligible: true, rating: 4.9, reviews: 2134 },
+  { id: "7", name: "Shure SM7B", brand: "Shure", price: 399, category: "recording-gear", slug: "shure-sm7b", emoji: "🎙️", shipsInDays: 2, twoDayEligible: true, rating: 4.9, reviews: 5678 },
+  { id: "8", name: "Audio-Technica ATH-M50x", brand: "Audio-Technica", price: 149, originalPrice: 189, category: "audio-equipment", slug: "ath-m50x", emoji: "🎧", shipsInDays: 2, twoDayEligible: true, rating: 4.8, reviews: 8765 },
+  { id: "9", name: "Yamaha HS8 Studio Monitors", brand: "Yamaha", price: 499, category: "audio-equipment", slug: "yamaha-hs8", emoji: "🔊", shipsInDays: 2, twoDayEligible: true, rating: 4.7, reviews: 2341 },
+  { id: "10", name: "Roland TD-17KVX E-Drum Kit", brand: "Roland", price: 1599, category: "drums-percussion", slug: "roland-td-17kvx", emoji: "🥁", shipsInDays: 3, twoDayEligible: false, rating: 4.6, reviews: 567 },
+  { id: "11", name: "Nord Stage 3 88", brand: "Nord", price: 3799, category: "keyboards-synths", slug: "nord-stage-3", emoji: "🎹", shipsInDays: 2, twoDayEligible: true, rating: 4.9, reviews: 452 },
+  { id: "12", name: "Fender Jazz Bass", brand: "Fender", price: 899, category: "guitars-basses", slug: "fender-jazz-bass", emoji: "🎸", shipsInDays: 2, twoDayEligible: true, rating: 4.8, reviews: 1234 },
 ];
 
 const categories = [
-  { slug: "computers-laptops", name: "Computers & Laptops", count: 45 },
-  { slug: "components", name: "Components", count: 128 },
-  { slug: "smartphones", name: "Smartphones", count: 67 },
-  { slug: "audio-gaming", name: "Audio & Gaming", count: 89 },
-  { slug: "tvs-displays", name: "TVs & Displays", count: 34 },
-  { slug: "accessories", name: "Accessories", count: 156 },
+  { slug: "guitars-basses", name: "Guitars & Basses", count: 45 },
+  { slug: "keyboards-synths", name: "Keyboards & Synths", count: 128 },
+  { slug: "recording-gear", name: "Recording Gear", count: 67 },
+  { slug: "audio-equipment", name: "Audio Equipment", count: 89 },
+  { slug: "drums-percussion", name: "Drums & Percussion", count: 34 },
 ];
 
 const brands = [
-  { name: "Apple", count: 89 },
-  { name: "NVIDIA", count: 23 },
-  { name: "AMD", count: 45 },
-  { name: "Samsung", count: 67 },
-  { name: "Sony", count: 78 },
-  { name: "Logitech", count: 56 },
+  { name: "Fender", count: 89 },
+  { name: "Gibson", count: 23 },
+  { name: "Korg", count: 45 },
+  { name: "Moog", count: 67 },
+  { name: "Focusrite", count: 78 },
+  { name: "Shure", count: 56 },
 ];
 
 const priceRanges = [
@@ -324,34 +324,37 @@ export default function ProductsPage() {
               : 'space-y-4'
             }>
               {filteredProducts.map((product) => (
-                <Link
+                <div
                   key={product.id}
-                  href={`/products/${product.slug}`}
                   className={`group rounded-xl border bg-card text-card-foreground shadow-sm overflow-hidden hover:shadow-lg transition-all ${
                     viewMode === 'list' ? 'flex' : ''
                   }`}
                 >
-                  <div className={`bg-gradient-to-br from-gray-50 to-gray-100 relative flex items-center justify-center ${
-                    viewMode === 'grid' ? 'aspect-square' : 'w-48 h-48 flex-shrink-0'
-                  }`}>
-                    <span className="text-6xl">{product.emoji}</span>
-                    <div className="absolute top-3 left-3">
-                      <ShippingBadge
-                        shipsInDays={product.shipsInDays}
-                        twoDayEligible={product.twoDayEligible}
-                      />
-                    </div>
-                    {(product.originalPrice ?? 0) > product.price && (
-                      <div className="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
-                        {Math.round((1 - product.price / (product.originalPrice ?? product.price)) * 100)}% OFF
+                  <Link href={`/products/${product.slug}`} className={viewMode === 'list' ? 'flex' : 'block'}>
+                    <div className={`bg-gradient-to-br from-gray-50 to-gray-100 relative flex items-center justify-center ${
+                      viewMode === 'grid' ? 'aspect-square' : 'w-48 h-48 flex-shrink-0'
+                    }`}>
+                      <span className="text-6xl">{product.emoji}</span>
+                      <div className="absolute top-3 left-3">
+                        <ShippingBadge
+                          shipsInDays={product.shipsInDays}
+                          twoDayEligible={product.twoDayEligible}
+                        />
                       </div>
-                    )}
-                  </div>
-                  <div className="p-4 flex-1">
+                      {(product.originalPrice ?? 0) > product.price && (
+                        <div className="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
+                          {Math.round((1 - product.price / (product.originalPrice ?? product.price)) * 100)}% OFF
+                        </div>
+                      )}
+                    </div>
+                  </Link>
+                  <div className="p-4 flex-1 flex flex-col">
                     <p className="text-xs text-muted-foreground">{product.brand}</p>
-                    <h3 className="font-semibold mt-1 line-clamp-2 group-hover:text-blue-600 transition-colors">
-                      {product.name}
-                    </h3>
+                    <Link href={`/products/${product.slug}`}>
+                      <h3 className="font-semibold mt-1 line-clamp-2 group-hover:text-purple-600 transition-colors">
+                        {product.name}
+                      </h3>
+                    </Link>
                     <div className="flex items-center gap-1 mt-2">
                       <span className="text-yellow-400">★</span>
                       <span className="text-sm">{product.rating}</span>
@@ -360,14 +363,26 @@ export default function ProductsPage() {
                     <div className="flex items-baseline gap-2 mt-2">
                       <span className="text-lg font-bold">${product.price}</span>
                       {(product.originalPrice ?? 0) > product.price && (
-<span className="text-sm text-muted-foreground line-through">
-                        ${product.originalPrice ?? product.price}
-                      </span>
+                        <span className="text-sm text-muted-foreground line-through">
+                          ${product.originalPrice ?? product.price}
+                        </span>
                       )}
                     </div>
-                    <Button className="w-full mt-3" size="sm">Add to Cart</Button>
+                    <div className="mt-auto pt-3">
+                      <AddToCartButton
+                        product={{
+                          productId: product.slug,
+                          name: product.name,
+                          price: product.price,
+                          image: product.emoji,
+                          quantity: 1,
+                          slug: product.slug,
+                          brand: product.brand,
+                        }}
+                      />
+                    </div>
                   </div>
-                </Link>
+                </div>
               ))}
             </div>
           )}
